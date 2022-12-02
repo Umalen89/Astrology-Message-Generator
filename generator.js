@@ -4,18 +4,34 @@ const link = ['is predicted to be for newborns between ', 'for people born betwe
 const ending = ['lucky people.', 'if you believe on this stuff anyway.', 'what a load of bull***.', ' this is based on the lunar calendar.', ' so be responsible and plan ahead your baby!.', 'what a great thing to be!!.']
 
 let lastNumb = [];
+let lastEnd = [];
 
 const randNumCheck = () =>{
+    let newNumb;
+
     do {
-        newNumb = Math.floor(Math.random() * 12);
-    } while ((lastNumb.indexOf(newNumb)) != -1)
+         newNumb = Math.floor(Math.random() * 12);
+    } while (lastNumb.indexOf(newNumb) != -1)
+    
     lastNumb.push(newNumb);
     return newNumb;
 }
 
+const randEnding = () => {
+    let newEnd;
+
+    do {
+       newEnd = Math.floor(Math.random() * 6); 
+    } while (lastEnd.indexOf(newEnd) != -1)
+
+    lastEnd.push(newEnd);
+    return newEnd;
+}
+
+
 const randomMessage = () =>{
     const signNumb = randNumCheck();
-    const randlink = Math.floor(Math.random() * 6);
+    const randlink = randEnding();
     const randEnd = Math.floor(Math.random() * 6);
 
     const message = sign[signNumb] + ' ' + link[randlink] + ' ' + date[signNumb] + ' ' + ending[randEnd];
