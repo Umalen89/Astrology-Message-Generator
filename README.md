@@ -1,0 +1,1 @@
+Random Astrology Message Generator
