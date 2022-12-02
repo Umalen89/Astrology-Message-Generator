@@ -12,3 +12,5 @@ Array variable randEnd containin different endings for our sentece.
 Funcion created to generate the random sentence.
 
 Finally we have produce a few console logs calling our function to show the message is random every time.
+
+Funcion added if calling the message generator multiple times it will generate a different zodiac sign than previously generated.
