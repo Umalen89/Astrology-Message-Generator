@@ -6,21 +6,37 @@ const link = ['is predicted to be for newborns between ', 'for people born betwe
 const ending = ['lucky people.', 'if you believe on this stuff anyway.', 'what a load of bull***.', ' this is based on the lunar calendar.', ' so be responsible and plan ahead your baby!.', 'what a great thing to be!!.']
 
 // arrays created to register the history of used Zodiac signs and end sentence
-let lastNumb = [];
+let histNumb = [];
+let histEnd = [];
 
 // funtions to ensure there is a different Zodiac sign and end of sentence
 const randNumCheck = () =>{
+    let newNumb;
+
     do {
-        newNumb = Math.floor(Math.random() * 12);
-    } while ((lastNumb.indexOf(newNumb)) != -1)
-    lastNumb.push(newNumb);
+        newNumb = Math.floor(Math.random() * sign.length);
+    } while (histNumb.indexOf(newNumb) != -1)
+    histNumb.push(newNumb);
     return newNumb;
+    }
+
+const randEndCheck = () =>{
+    let newEnd;
+    do {
+        newEnd = Math.floor(Math.random() * ending.length);
+    } while (histEnd.indexOf(newEnd) != -1)
+
+    histEnd.push(newEnd);
+    console.log(histEnd);
+    return newEnd;
 }
+
+//Function generating message
 
 const randomMessage = () =>{
     const signNumb = randNumCheck();
-    const randlink = Math.floor(Math.random() * 6);
-    const randEnd = Math.floor(Math.random() * 6);
+    const randlink = Math.floor(Math.random() * link.length);
+    const randEnd = randEndCheck();
 
     const message = sign[signNumb] + ' ' + link[randlink] + ' ' + date[signNumb] + ' ' + ending[randEnd];
     return message;
