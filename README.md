@@ -13,4 +13,4 @@ Funcion created to generate the random sentence.
 
 Finally we have produce a few console logs calling our function to show the message is random every time.
 
-Funcion added if calling the message generator multiple times it will generate a different zodiac sign than previously generated.
+Funcion added if calling the message generator multiple times it will generate a different zodiac sign than previously generated, same for the ending of the sentence. This of course is to maximize how random the next message would be when the ammount of calls to the function is less than the length of our arrays.

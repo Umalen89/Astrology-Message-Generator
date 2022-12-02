@@ -12,7 +12,7 @@ let histEnd = [];
 // funtions to ensure there is a different Zodiac sign and end of sentence
 const randNumCheck = () =>{
     let newNumb;
-
+     
     do {
         newNumb = Math.floor(Math.random() * sign.length);
     } while (histNumb.indexOf(newNumb) != -1)
