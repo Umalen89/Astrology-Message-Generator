@@ -3,3 +3,21 @@ const date = ['March 21 to April 19', 'April 20 to May 20', 'May 21 to Jun 20', 
 const link = ['is predicted to be for newborns between ', 'for people born between the dates ', 'is speculated to be from ', 'will affect people born from ', 'most likely but no accuratly from ', 'could be , not science in it, for people born from '];
 const ending = ['lucky people.', 'if you believe on this stuff anyway.', 'what a load of bull***.', ' this is based on the lunar calendar.', ' so be responsible and plan ahead your baby!.', 'what a great thing to be!!.']
 
+const randomMessage = () =>{
+    const signNumb = Math.floor(Math.random() * 12);
+    const randlink = Math.floor(Math.random() * 6);
+    const randEnd = Math.floor(Math.random() * 6);
+
+    const message = sign[signNumb] + ' ' + link[randlink] + ' ' + date[signNumb] + ' ' + ending[randEnd];
+    
+    return message;
+}
+
+console.log(randomMessage());
+console.log(' ----============---');
+console.log(randomMessage());
+console.log(' ----============---');
+console.log(randomMessage());
+console.log(' ----============---');
+console.log(randomMessage());
+console.log(' ----============---');
