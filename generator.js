@@ -7,37 +7,19 @@ const ending = ['lucky people.', 'if you believe on this stuff anyway.', 'what a
 
 // arrays created to register the history of used Zodiac signs and end sentence
 let lastNumb = [];
-let lastEnd = [];
 
 // funtions to ensure there is a different Zodiac sign and end of sentence
 const randNumCheck = () =>{
-    let newNumb;
-
     do {
-         newNumb = Math.floor(Math.random() * 12);
-    } while (lastNumb.indexOf(newNumb) != -1)
-    
+        newNumb = Math.floor(Math.random() * 12);
+    } while ((lastNumb.indexOf(newNumb)) != -1)
     lastNumb.push(newNumb);
     return newNumb;
 }
 
-const randEnding = () => {
-    let newEnd;
-
-    do {
-       newEnd = Math.floor(Math.random() * 6); 
-    } while (lastEnd.indexOf(newEnd) != -1)
-
-    lastEnd.push(newEnd);
-    console.log(lastEnd)
-    return newEnd;
-}
-
-// funtion generating message
-
 const randomMessage = () =>{
     const signNumb = randNumCheck();
-    const randlink = randEnding();
+    const randlink = Math.floor(Math.random() * 6);
     const randEnd = Math.floor(Math.random() * 6);
 
     const message = sign[signNumb] + ' ' + link[randlink] + ' ' + date[signNumb] + ' ' + ending[randEnd];
